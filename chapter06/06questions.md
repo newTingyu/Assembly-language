@@ -55,6 +55,7 @@ end start 
 实验5
 ====
 1.
+
 ```asm
 assume cs:code,ds:data,ss:stack
 data segment   
@@ -92,7 +93,8 @@ end start
       从这个公式可以看到，每一个段的地址都对齐在16的倍数上。比如DS=1234H，则这个段就从 1234H×16＋0000H＝12340H开始，最大到1234H×16＋0FFFFH＝2233FH为止。  
 二、对同一个内存地址，有不同的段:偏移量组合方法，比如2233FH这个地址，既可以表示为1234H:0FFFFH（在1234H段中），也可以表示为2233H:0000FH（在2233H段中）。  
 那么，如果汇编程序中有下面两个连续的段定义，汇编编译程序会怎么做呢？  
-```name1 segment  
+```asm
+name1 segment  
 d1 db 0  
 name1 ends  
 name2 segment  
